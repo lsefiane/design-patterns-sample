@@ -1,0 +1,2 @@
+# Java Design Patterns Sample
+
