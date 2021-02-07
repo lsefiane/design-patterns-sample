@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.design.patterns.creational.builder.Bedroom;
 import com.design.patterns.creational.builder.BedroomBuilder;
+import com.design.patterns.creational.singleton.PrintSpooler;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -29,6 +30,11 @@ public class DesignPatternsApplication {
 				.build();
 
 		logger.info("Builder Design Pattern {}", bedroom);
+		
+		
+		PrintSpooler spooler = PrintSpooler.getInstance();
+		
+		logger.info("Singleton Design Pattern {}", spooler);
 
 	}
 

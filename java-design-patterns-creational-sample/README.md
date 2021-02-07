@@ -5,6 +5,7 @@
 - Separate the construction of a complex object from its representation.
 
 ## Singleton Pattern
+- Restricts the instantiation of a class to one "single" instance.
 
 ## Prototype Pattern
 
