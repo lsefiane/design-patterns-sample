@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.design.patterns.creational.builder.Bedroom;
+import com.design.patterns.creational.builder.BedroomBuilder;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -19,7 +20,7 @@ public class DesignPatternsApplication {
 
 		SpringApplication.run(DesignPatternsApplication.class, args);
 
-		Bedroom bedroom = new Bedroom.BedroomBuilder()//
+		Bedroom bedroom = new BedroomBuilder()//
 				.setDimensions(new Dimension(200, 100))//
 				.setCellingHeight(132).setFloorNumber(2)//
 				.setNumberOfDoors(4)//
