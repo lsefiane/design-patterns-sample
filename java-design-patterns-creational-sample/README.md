@@ -2,6 +2,8 @@
 
 ## Builder Pattern
 
+- Separate the construction of a complex object from its representation.
+
 ## Singleton Pattern
 
 ## Prototype Pattern
