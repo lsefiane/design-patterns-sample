@@ -15,15 +15,15 @@ import org.slf4j.LoggerFactory;
  * @date Feb. 13, 2021
  *
  */
-public class WhiteChocolate implements Candy {
+public class WhiteChocolate implements ChocolateCandy {
 
 	private static Logger logger = LoggerFactory.getLogger(WhiteChocolate.class);
 
 	@Override
-	public List<Candy> makeCandyPackage(int quantity) {
-		List<Candy> chocolatePackage = new ArrayList<>();
+	public List<ChocolateCandy> makeCandyPackage(int quantity) {
+		List<ChocolateCandy> chocolatePackage = new ArrayList<>();
 		for (int i = 1; i <= quantity; i++) {
-			Candy chocolate = new WhiteChocolate();
+			ChocolateCandy chocolate = new WhiteChocolate();
 			chocolatePackage.add(chocolate);
 		}
 		logger.info("One package of {} white chocolates has been made!", quantity);

@@ -1,18 +1,18 @@
 package com.design.patterns.creational.factorymethod;
 
+import java.util.List;
+
 /**
  * 
- * ChocolateType.java
+ * Candy.java
  *
  * @author Lyes Sefiane
  * @email lyes.sefiane@gmail.com
  * @date Feb. 13, 2021
  *
  */
-public enum ChocolateType {
+public interface ChocolateCandy {
 
-	DARK, //
-	WHITE, //
-	MILK;
+	abstract List<ChocolateCandy> makeCandyPackage(int quantity);
 
 }

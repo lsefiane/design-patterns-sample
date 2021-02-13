@@ -14,4 +14,5 @@
 - Uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
 
 ## Abstract Factory Pattern
+- Provides an interface for creating families of related objects, without specifying concrete classes.
 

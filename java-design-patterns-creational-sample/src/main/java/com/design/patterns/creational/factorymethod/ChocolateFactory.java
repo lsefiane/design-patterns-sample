@@ -6,6 +6,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.design.patterns.creational.abstractfactory.AbstractFactory;
+
 /**
  * 
  * ChocolateFactory.java
@@ -15,7 +17,7 @@ import org.slf4j.LoggerFactory;
  * @date Feb. 13, 2021
  *
  */
-public class ChocolateFactory {
+public class ChocolateFactory implements AbstractFactory<ChocolateCandy>{
 
 	private static Logger logger = LoggerFactory.getLogger(ChocolateFactory.class);
 
@@ -25,30 +27,30 @@ public class ChocolateFactory {
 	 * @param chocolateType
 	 * @return created Candy
 	 */
-	private Candy getCandy(ChocolateType chocolateType) {
+	public ChocolateCandy getCandy(CandyType candyType) {
 
-		Candy candy = null;
+		ChocolateCandy candy = null;
 
-		if (chocolateType == null) {
-			throw new IllegalArgumentException("Chocolate Type : " + chocolateType + " Should Not Be Null !");
+		if (candyType == null) {
+			throw new IllegalArgumentException("Candy Type : " + candyType + " Should Not Be Null !");
 		}
 
-		switch (chocolateType) {
-		case DARK:
+		switch (candyType) {
+		case CHOCOLATE_DARK:
 			candy = new DarkChocolate();
 			break;
-		case WHITE:
+		case CHOCOLATE_MILK:
 			candy = new WhiteChocolate();
 			break;
-		case MILK:
+		case CHOCOLATE_WHITE:
 			candy = new MilkChocolate();
 			break;
 		default:
-			throw new UnsupportedOperationException("Chocolate Type : " + chocolateType + "Not Yet Supported");
+			throw new UnsupportedOperationException("Candy Type : " + candyType + " Not Yet Supported in Chocolate Factory");
 		}
 		return candy;
 	}
-
+	
 	/**
 	 * Get Candy Package
 	 * 
@@ -56,11 +58,12 @@ public class ChocolateFactory {
 	 * @param chocolateType
 	 * @return List<Candy>
 	 */
-	public List<Candy> getCandyPackage(int quantity, ChocolateType chocolateType) {
-		Candy candy = null;
-		List<Candy> candyPackage = new ArrayList<>();
+	@Override
+	public List<ChocolateCandy> getCandyPackage(int quantity, CandyType candyType) {
+		ChocolateCandy candy = null;
+		List<ChocolateCandy> candyPackage = new ArrayList<>();
 		try {
-			candy = getCandy(chocolateType);
+			candy = getCandy(candyType);
 			candyPackage = candy.makeCandyPackage(quantity);
 		} catch (RuntimeException e) {
 			logger.info("Exception Occurs While Getting Candy Package. {}", e.getMessage());
