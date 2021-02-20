@@ -16,6 +16,9 @@ import com.design.patterns.structural.bridge.Circle;
 import com.design.patterns.structural.bridge.Red;
 import com.design.patterns.structural.bridge.Shape;
 import com.design.patterns.structural.bridge.Square;
+import com.design.patterns.structural.composite.Manager;
+import com.design.patterns.structural.composite.SalesPerson;
+import com.design.patterns.structural.composite.SalesTeam;
 
 /**
  * 
@@ -54,6 +57,23 @@ public class DesignPatternsApplication {
 		logger.info("{}", square.draw());
 		logger.info("{}", circle.draw());
 
+		///////////////////////////////////////////////////
+
+		// Composite Design Pattern Sample.
+
+		Manager jane = new Manager("Jane");
+
+		SalesPerson bob = new SalesPerson("Bob", jane);
+		SalesPerson sue = new SalesPerson("Sue", jane);
+
+		SalesTeam team = new SalesTeam();
+		team.addPayees(jane);
+		team.addPayees(bob);
+		team.addPayees(sue);
+
+		logger.info("{}", jane.payExpenses(100));
+		logger.info("{}", bob.payExpenses(300));
+		logger.info("{}", team.payExpenses(200));
 	}
 
 	public static void printVehiclePrice(PriceCalculator calculator) {

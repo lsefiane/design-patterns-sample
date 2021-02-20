@@ -8,3 +8,7 @@
 
 - Decouple an abstraction from its implementation so that the two can vary independently.
 
+## Composite Pattern
+
+- Describes a group of objects that are treated the same way as a single instance of the same type of object.
+
