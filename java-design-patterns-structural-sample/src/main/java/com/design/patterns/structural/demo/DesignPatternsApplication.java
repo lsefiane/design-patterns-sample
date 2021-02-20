@@ -11,6 +11,11 @@ import com.design.patterns.structural.adapter.CarPriceCalculator;
 import com.design.patterns.structural.adapter.PriceCalculator;
 import com.design.patterns.structural.adapter.TruckPriceCalculator;
 import com.design.patterns.structural.adapter.lib.UKCarPriceCalculator;
+import com.design.patterns.structural.bridge.Blue;
+import com.design.patterns.structural.bridge.Circle;
+import com.design.patterns.structural.bridge.Red;
+import com.design.patterns.structural.bridge.Shape;
+import com.design.patterns.structural.bridge.Square;
 
 /**
  * 
@@ -40,6 +45,15 @@ public class DesignPatternsApplication {
 		// Adapt an external code to the current one
 		UKCarPriceCalculator ukCarPriceCalculator = new UKCarPriceCalculator(7, CarModel.BMW);
 		printVehiclePrice(new Adapter(ukCarPriceCalculator));
+
+		///////////////////////////////////////////////////
+
+		// Bridge Design Pattern Sample.
+		Shape square = new Square(new Red());
+		Shape circle = new Circle(new Blue());
+		logger.info("{}", square.draw());
+		logger.info("{}", circle.draw());
+
 	}
 
 	public static void printVehiclePrice(PriceCalculator calculator) {
