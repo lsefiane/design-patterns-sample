@@ -47,4 +47,13 @@
 
 - You want to encapsulate a complex subsystem behind a simple interface.
 - You want to make a complex code easier to use, understand and test.
-- You want to promote loose coupling 
+- You want to promote loose coupling. 
+
+## Flyweight Pattern
+
+- Minimizes memory usage by sharing as much data as possible with other similar objects.
+
+<h3> When to Use It ? </h3>
+
+- You create an application that uses a large number of repeating objects.
+- You want to reduce the memory usage, and to keep away from errors related to memory like java.lang.OutOfMemoryError.

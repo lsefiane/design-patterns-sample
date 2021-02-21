@@ -25,6 +25,9 @@ import com.design.patterns.structural.decorator.SportCarDecorator;
 import com.design.patterns.structural.facade.OrderServiceFacade;
 import com.design.patterns.structural.facade.OrderServiceFacadeImpl;
 import com.design.patterns.structural.facade.domain.Product;
+import com.design.patterns.structural.flyweight.Vehicle;
+import com.design.patterns.structural.flyweight.VehicleFactory;
+import com.design.patterns.structural.flyweight.VehicleType;
 
 /**
  * 
@@ -99,6 +102,27 @@ public class DesignPatternsApplication {
 		OrderServiceFacade orderService = new OrderServiceFacadeImpl();
 		boolean orderConfirmed = orderService.placeOrder(new Product(1));
 		logger.info("Order Product Completed Successfully ? {}", orderConfirmed ? "Yes" : "No");
+
+		///////////////////////////////////////////////////
+
+		// Flyweight Design Pattern Sample.
+		String formattedStringMessage = "Creating Vehicle : {}, Type : {}, Location : {} {}";
+		VehicleFactory vehicleFactory = new VehicleFactory();
+		Vehicle myCar1 =  vehicleFactory.getVehicle(VehicleType.CAR);
+		myCar1.setLocation(100, 200);
+		logger.info(formattedStringMessage, myCar1, myCar1.getType(), myCar1.getLocation()[0], myCar1.getLocation()[1]);
+		
+		Vehicle myCar2 =  vehicleFactory.getVehicle(VehicleType.CAR);
+		myCar2.setLocation(150, 250);
+		logger.info(formattedStringMessage, myCar2, myCar2.getType(), myCar2.getLocation()[0], myCar2.getLocation()[1]);
+		
+		Vehicle myTruck1 =  vehicleFactory.getVehicle(VehicleType.TRUCK);
+		myTruck1.setLocation(200, 300);
+		logger.info(formattedStringMessage, myTruck1, myTruck1.getType(), myTruck1.getLocation()[0], myTruck1.getLocation()[1]);
+		
+		Vehicle myTruck2 =  vehicleFactory.getVehicle(VehicleType.TRUCK);
+		myTruck2.setLocation(250, 350);
+		logger.info(formattedStringMessage, myTruck2, myTruck2.getType(), myTruck2.getLocation()[0], myTruck2.getLocation()[1]);
 
 	}
 
