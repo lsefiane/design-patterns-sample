@@ -19,6 +19,9 @@ import com.design.patterns.structural.bridge.Square;
 import com.design.patterns.structural.composite.Manager;
 import com.design.patterns.structural.composite.SalesPerson;
 import com.design.patterns.structural.composite.SalesTeam;
+import com.design.patterns.structural.decorator.BasicCar;
+import com.design.patterns.structural.decorator.Car;
+import com.design.patterns.structural.decorator.SportCarDecorator;
 
 /**
  * 
@@ -74,6 +77,19 @@ public class DesignPatternsApplication {
 		logger.info("{}", jane.payExpenses(100));
 		logger.info("{}", bob.payExpenses(300));
 		logger.info("{}", team.payExpenses(200));
+
+		///////////////////////////////////////////////////
+
+		// Decorator Design Pattern Sample.
+		Car car1 = new BasicCar();
+		Car car2 = new BasicCar();
+		Car car3 = new BasicCar();
+
+		car1.assemble();
+		car2 = new SportCarDecorator(car2);
+		car2.assemble();
+		car3.assemble();
+
 	}
 
 	public static void printVehiclePrice(PriceCalculator calculator) {
