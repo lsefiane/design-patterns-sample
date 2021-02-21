@@ -37,4 +37,14 @@
 <h3> When to Use It ? </h3>
 
 - You want to add additional responsibilities to an object dynamically.
-- You want more flexibility than subclassing
+- You want more flexibility than subclassing.
+
+## Facade Pattern
+
+- Serves as a front-facing interface masking more complex underlying or structural code.
+
+<h3> When to Use It ? </h3>
+
+- You want to encapsulate a complex subsystem behind a simple interface.
+- You want to make a complex code easier to use, understand and test.
+- You want to promote loose coupling 

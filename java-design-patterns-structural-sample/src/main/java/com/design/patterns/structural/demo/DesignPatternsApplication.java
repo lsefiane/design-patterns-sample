@@ -22,6 +22,9 @@ import com.design.patterns.structural.composite.SalesTeam;
 import com.design.patterns.structural.decorator.BasicCar;
 import com.design.patterns.structural.decorator.Car;
 import com.design.patterns.structural.decorator.SportCarDecorator;
+import com.design.patterns.structural.facade.OrderServiceFacade;
+import com.design.patterns.structural.facade.OrderServiceFacadeImpl;
+import com.design.patterns.structural.facade.domain.Product;
 
 /**
  * 
@@ -89,6 +92,13 @@ public class DesignPatternsApplication {
 		car2 = new SportCarDecorator(car2);
 		car2.assemble();
 		car3.assemble();
+
+		///////////////////////////////////////////////////
+
+		// Facade Design Pattern Sample.
+		OrderServiceFacade orderService = new OrderServiceFacadeImpl();
+		boolean orderConfirmed = orderService.placeOrder(new Product(1));
+		logger.info("Order Product Completed Successfully ? {}", orderConfirmed ? "Yes" : "No");
 
 	}
 
