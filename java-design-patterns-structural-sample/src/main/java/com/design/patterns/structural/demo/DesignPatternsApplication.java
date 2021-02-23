@@ -1,5 +1,7 @@
 package com.design.patterns.structural.demo;
 
+import java.nio.file.Path;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -28,6 +30,8 @@ import com.design.patterns.structural.facade.domain.Product;
 import com.design.patterns.structural.flyweight.Vehicle;
 import com.design.patterns.structural.flyweight.VehicleFactory;
 import com.design.patterns.structural.flyweight.VehicleType;
+import com.design.patterns.structural.proxy.virtual.Image;
+import com.design.patterns.structural.proxy.virtual.ImageProxy;
 
 /**
  * 
@@ -123,6 +127,13 @@ public class DesignPatternsApplication {
 		Vehicle myTruck2 =  vehicleFactory.getVehicle(VehicleType.TRUCK);
 		myTruck2.setLocation(250, 350);
 		logger.info(formattedStringMessage, myTruck2, myTruck2.getType(), myTruck2.getLocation()[0], myTruck2.getLocation()[1]);
+		
+		///////////////////////////////////////////////////
+
+		// Proxy Design Pattern Sample.
+		Image heavyImage = new ImageProxy(Path.of("sample/veryHighResPhoto3.jpeg"));
+		heavyImage.showImage();
+		
 
 	}
 

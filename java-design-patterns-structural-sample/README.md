@@ -57,3 +57,13 @@
 
 - You create an application that uses a large number of repeating objects.
 - You want to reduce the memory usage, and to keep away from errors related to memory like java.lang.OutOfMemoryError.
+
+## Proxy Pattern
+
+-  Controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+
+<h3> When to Use It ? </h3>  
+
+- You want a simplified version of a complex or heavy object. Loads the original object on demand, also called as lazy initialization (Virtual Proxy)
+- You want a local version of a remote object (Remote Proxy).
+- You want to control access to a sensitive master object (Protection Proxy).
