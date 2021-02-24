@@ -15,6 +15,7 @@
 	<modules>
 		<module>java-design-patterns-creational-sample</module>
 		<module>java-design-patterns-structural-sample</module>
+		<module>java-design-patterns-behavioral-sample</module>
   </modules>
 
 </project>
