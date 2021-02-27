@@ -10,6 +10,10 @@ import com.design.patterns.behavioral.chainofresponsability.FileExtension;
 import com.design.patterns.behavioral.chainofresponsability.SlideShowHandler;
 import com.design.patterns.behavioral.chainofresponsability.SpreadSheetHandler;
 import com.design.patterns.behavioral.chainofresponsability.TextDocumentHandler;
+import com.design.patterns.behavioral.command.Broker;
+import com.design.patterns.behavioral.command.BuyStock;
+import com.design.patterns.behavioral.command.SellStock;
+import com.design.patterns.behavioral.command.Stock;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -24,10 +28,20 @@ public class DesignPatternsApplication {
 		///////////////////////////////////////////////////
 
 		// Chain Of Responsibility Design Pattern Sample.
-
 		DocumentHandler chain = new SpreadSheetHandler(new SlideShowHandler(new TextDocumentHandler(null)));
 		chain.openDocument(FileExtension.PPT);
 		chain.openDocument(FileExtension.TXT);
+
+		///////////////////////////////////////////////////
+
+		// Command Design Pattern Sample.
+		Stock stock = new Stock("Hola", 10);
+		SellStock sellStock = new SellStock(stock);
+		BuyStock buyStock = new BuyStock(stock);
+		Broker broker = new Broker();
+		broker.takeOrder(buyStock);
+		broker.takeOrder(sellStock);
+		broker.placeOrder();
 
 	}
 
