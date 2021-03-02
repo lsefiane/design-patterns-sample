@@ -14,11 +14,12 @@ import com.design.patterns.behavioral.command.Broker;
 import com.design.patterns.behavioral.command.BuyStock;
 import com.design.patterns.behavioral.command.SellStock;
 import com.design.patterns.behavioral.command.Stock;
+import com.design.patterns.behavioral.interpreter.InterpreterContext;
+import com.design.patterns.behavioral.interpreter.ParameterPosition;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
 
-	@SuppressWarnings("unused")
 	private static Logger logger = LoggerFactory.getLogger(DesignPatternsApplication.class);
 
 	public static void main(String[] args) {
@@ -42,7 +43,15 @@ public class DesignPatternsApplication {
 		broker.takeOrder(buyStock);
 		broker.takeOrder(sellStock);
 		broker.placeOrder();
+		
+		///////////////////////////////////////////////////
 
+		// Interpreter Design Pattern Sample.
+		String str1 = "H-1::Param=1";
+		InterpreterContext context = new InterpreterContext();
+		ParameterPosition parameterPosition = new ParameterPosition(str1);
+		String interpretationResult = parameterPosition.interpret(context);		
+		logger.info("ParamterPosition in this sentense -> H-1::Param=1 is : {}", interpretationResult);
 	}
 
 }
