@@ -16,6 +16,9 @@ import com.design.patterns.behavioral.command.SellStock;
 import com.design.patterns.behavioral.command.Stock;
 import com.design.patterns.behavioral.interpreter.InterpreterContext;
 import com.design.patterns.behavioral.interpreter.ParameterPosition;
+import com.design.patterns.behavioral.iterator.Inventory;
+import com.design.patterns.behavioral.iterator.Item;
+import com.design.patterns.behavioral.iterator.StockIterator;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -52,6 +55,22 @@ public class DesignPatternsApplication {
 		ParameterPosition parameterPosition = new ParameterPosition(str1);
 		String interpretationResult = parameterPosition.interpret(context);		
 		logger.info("ParamterPosition in this sentense -> H-1::Param=1 is : {}", interpretationResult);
+		
+		///////////////////////////////////////////////////
+
+		// Iterator Design Pattern Sample.
+		Item pens = new Item("pens", 175);
+		Item pencils = new Item("pencils", 0);
+		Item paper = new Item("paper", 500);
+		
+		Inventory inventory = new Inventory(pens, pencils, paper);
+		StockIterator stockIterator = inventory.iterator();
+		
+		while (stockIterator.hasNext()) {
+			Item item = stockIterator.next();
+			logger.info("{}", item);
+			
+		}
 	}
 
 }

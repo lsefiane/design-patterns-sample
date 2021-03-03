@@ -31,3 +31,12 @@
 - You want to create a compiler
 - You want to create language translator
 - You want to create SQL Parser
+
+
+## Iterator Pattern
+
+- Provides you a way to access the items in a collection without exposing its underlying representation (list, stack, tree, etc.).
+
+<h3> When to Use It ? </h3>
+
+- You want to access elements of a collection without exposing the internal structure of elements.
