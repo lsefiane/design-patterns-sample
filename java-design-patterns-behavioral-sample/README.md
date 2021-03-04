@@ -40,3 +40,12 @@
 <h3> When to Use It ? </h3>
 
 - You want to access elements of a collection without exposing the internal structure of elements.
+
+
+## Mediator Pattern
+
+- Defines an object that encapsulates how a set of objects interact.
+
+<h3> When to Use It ? </h3>
+
+- You want to reduce communication complexity between multiple objects or classes.
