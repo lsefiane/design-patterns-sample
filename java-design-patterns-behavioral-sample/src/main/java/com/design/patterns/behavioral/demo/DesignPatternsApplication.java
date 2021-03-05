@@ -23,6 +23,7 @@ import com.design.patterns.behavioral.mediator.ChatMediator;
 import com.design.patterns.behavioral.mediator.ChatMediatorImpl;
 import com.design.patterns.behavioral.mediator.User;
 import com.design.patterns.behavioral.mediator.UserImpl;
+import com.design.patterns.behavioral.memento.TextDocument;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -89,6 +90,19 @@ public class DesignPatternsApplication {
 		mediator.addUser(user3);
 		mediator.addUser(user4);
 		user1.send("Hi All !");
+
+		///////////////////////////////////////////////////
+
+		// Memento Design Pattern Sample.
+		TextDocument textDocument = new TextDocument();
+		textDocument.write("Hello");
+		textDocument.save();
+		textDocument.print();
+		textDocument.write(" World");
+		textDocument.print();
+		textDocument.undo();
+		textDocument.print();
+
 	}
 
 }

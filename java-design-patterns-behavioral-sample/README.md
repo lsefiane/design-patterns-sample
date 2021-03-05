@@ -49,3 +49,12 @@
 <h3> When to Use It ? </h3>
 
 - You want to reduce communication complexity between multiple objects or classes.
+
+
+## Memento Pattern
+
+-  Lets you save and restore the previous state of an object without revealing the details of its implementation.
+
+<h3> When to Use It ? </h3>
+
+- You want to save state and restore it later, without violating encapsulation. 
