@@ -26,6 +26,7 @@ import com.design.patterns.behavioral.mediator.UserImpl;
 import com.design.patterns.behavioral.memento.TextDocument;
 import com.design.patterns.behavioral.observer.Connection;
 import com.design.patterns.behavioral.observer.SocialMediaFeed;
+import com.design.patterns.behavioral.state.MediaPlayer;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -117,6 +118,13 @@ public class DesignPatternsApplication {
 
 		sally.setStatus("Going for a walk");
 		bob.setStatus("Eating my lunch");
+		
+		///////////////////////////////////////////////////
+
+		// State Design Pattern Sample.
+		MediaPlayer mediaPlayer = new MediaPlayer();
+		mediaPlayer.play();
+		mediaPlayer.pause();
 	}
 
 }

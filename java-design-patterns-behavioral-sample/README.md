@@ -67,3 +67,12 @@
 
 - You have several objects which are dependent on another object and are required to perform an action when the state of that object changes.
 - An object needs to notify others without knowing who they are or how many there are.
+
+## State Pattern
+
+-  Allows objects to change their behavior based on the current state.
+
+<h3> When to Use It ? </h3>
+
+- You want to avoid a large if/else blocks or switch statements.
+- You have an object that behaves differently depending on its current state.
