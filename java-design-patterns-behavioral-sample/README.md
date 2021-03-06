@@ -95,7 +95,7 @@
 - You want to implement the common parts of an algorithm once.
 - You have classes that duplicates the same code.
 
-## Visitor Method Pattern
+## Visitor Pattern
 
 -  Provides a way of separating an algorithm from an object structure on which it operates. 
 
