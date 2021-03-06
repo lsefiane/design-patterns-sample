@@ -58,3 +58,12 @@
 <h3> When to Use It ? </h3>
 
 - You want to save state and restore it later, without violating encapsulation. 
+
+## Observer Pattern
+
+-  Notifies automatically the observers when any state changes.
+
+<h3> When to Use It ? </h3>
+
+- You have several objects which are dependent on another object and are required to perform an action when the state of that object changes.
+- An object needs to notify others without knowing who they are or how many there are.

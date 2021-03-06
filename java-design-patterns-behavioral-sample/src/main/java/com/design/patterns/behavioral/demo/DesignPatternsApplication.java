@@ -24,6 +24,8 @@ import com.design.patterns.behavioral.mediator.ChatMediatorImpl;
 import com.design.patterns.behavioral.mediator.User;
 import com.design.patterns.behavioral.mediator.UserImpl;
 import com.design.patterns.behavioral.memento.TextDocument;
+import com.design.patterns.behavioral.observer.Connection;
+import com.design.patterns.behavioral.observer.SocialMediaFeed;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -103,6 +105,18 @@ public class DesignPatternsApplication {
 		textDocument.undo();
 		textDocument.print();
 
+		///////////////////////////////////////////////////
+
+		// Observer Design Pattern Sample.
+		Connection sally = new Connection();
+		Connection bob = new Connection();
+		SocialMediaFeed feed = new SocialMediaFeed();
+
+		sally.addPropertyChangeListener(feed);
+		bob.addPropertyChangeListener(feed);
+
+		sally.setStatus("Going for a walk");
+		bob.setStatus("Eating my lunch");
 	}
 
 }
