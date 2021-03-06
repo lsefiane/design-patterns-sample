@@ -33,6 +33,8 @@ import com.design.patterns.behavioral.strategy.File;
 import com.design.patterns.behavioral.template.MeatFeastPizza;
 import com.design.patterns.behavioral.template.Pizza;
 import com.design.patterns.behavioral.template.VegetarianPizza;
+import com.design.patterns.behavioral.visitor.DiscountVisitor;
+import com.design.patterns.behavioral.visitor.GroceryList;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -151,6 +153,15 @@ public class DesignPatternsApplication {
 		vegetarianPizza.printInsdtructions();
 		logger.info("==== Meat Feast Pizza Instruction ====");
 		meatFeastPizza.printInsdtructions();
+		
+		///////////////////////////////////////////////////
+
+		// Visitor Design Pattern Sample.
+		GroceryList groceryList = new GroceryList();
+		logger.info("Total Price of Grocery List : {}", groceryList.getPrice());
+		groceryList.accept(new DiscountVisitor());
+		logger.info("New Total Price of Grocery List : {}", groceryList.getPrice());
+		
 	}
 
 }

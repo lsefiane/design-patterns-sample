@@ -94,3 +94,12 @@
 - You have two or more implementations of a similar algorithm.
 - You want to implement the common parts of an algorithm once.
 - You have classes that duplicates the same code.
+
+## Visitor Method Pattern
+
+-  Provides a way of separating an algorithm from an object structure on which it operates. 
+
+<h3> When to Use It ? </h3>
+
+- You have similar operations to be performed on objects of different types. 
+- You have to define a new operation without changing the classes of the elements in the composite.
