@@ -30,6 +30,9 @@ import com.design.patterns.behavioral.state.MediaPlayer;
 import com.design.patterns.behavioral.strategy.AESEncrypter;
 import com.design.patterns.behavioral.strategy.Encrypter;
 import com.design.patterns.behavioral.strategy.File;
+import com.design.patterns.behavioral.template.MeatFeastPizza;
+import com.design.patterns.behavioral.template.Pizza;
+import com.design.patterns.behavioral.template.VegetarianPizza;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -139,6 +142,15 @@ public class DesignPatternsApplication {
 		// Strategy Design Pattern Sample_V2.
 		file.encrypt(Encrypter.rsaEncrypter);
 
+		///////////////////////////////////////////////////
+
+		// Template Design Pattern Sample.
+		Pizza vegetarianPizza = new VegetarianPizza();
+		Pizza meatFeastPizza = new MeatFeastPizza();
+		logger.info("==== Vegetarian Pizza Instruction ====");
+		vegetarianPizza.printInsdtructions();
+		logger.info("==== Meat Feast Pizza Instruction ====");
+		meatFeastPizza.printInsdtructions();
 	}
 
 }

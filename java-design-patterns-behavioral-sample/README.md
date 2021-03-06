@@ -84,3 +84,13 @@
 <h3> When to Use It ? </h3>
 
 - You want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.
+
+## Template Method Pattern
+
+-  Allows you to defines a skeleton of an algorithm in a base class and let subclasses override the steps without changing the overall algorithm's structure. 
+
+<h3> When to Use It ? </h3>
+
+- You have two or more implementations of a similar algorithm.
+- You want to implement the common parts of an algorithm once.
+- You have classes that duplicates the same code.
