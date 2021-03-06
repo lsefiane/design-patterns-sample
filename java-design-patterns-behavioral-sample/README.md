@@ -76,3 +76,11 @@
 
 - You want to avoid a large if/else blocks or switch statements.
 - You have an object that behaves differently depending on its current state.
+
+## Strategy Pattern
+
+-  Enables selecting an algorithm at runtime. 
+
+<h3> When to Use It ? </h3>
+
+- You want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.

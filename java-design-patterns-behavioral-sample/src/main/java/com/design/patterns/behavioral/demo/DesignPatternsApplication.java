@@ -27,6 +27,9 @@ import com.design.patterns.behavioral.memento.TextDocument;
 import com.design.patterns.behavioral.observer.Connection;
 import com.design.patterns.behavioral.observer.SocialMediaFeed;
 import com.design.patterns.behavioral.state.MediaPlayer;
+import com.design.patterns.behavioral.strategy.AESEncrypter;
+import com.design.patterns.behavioral.strategy.Encrypter;
+import com.design.patterns.behavioral.strategy.File;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -118,13 +121,24 @@ public class DesignPatternsApplication {
 
 		sally.setStatus("Going for a walk");
 		bob.setStatus("Eating my lunch");
-		
+
 		///////////////////////////////////////////////////
 
 		// State Design Pattern Sample.
 		MediaPlayer mediaPlayer = new MediaPlayer();
 		mediaPlayer.play();
 		mediaPlayer.pause();
+
+		///////////////////////////////////////////////////
+
+		// Strategy Design Pattern Sample_V1.
+		File file = new File("test.pdf");
+		AESEncrypter aesEncrypter = new AESEncrypter();
+		file.encrypt(aesEncrypter);
+
+		// Strategy Design Pattern Sample_V2.
+		file.encrypt(Encrypter.rsaEncrypter);
+
 	}
 
 }
